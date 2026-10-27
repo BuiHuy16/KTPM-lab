@@ -1,0 +1,8 @@
+.git
+.env
+.build
+target
+user-service
+order-service
+tests
+**/*.log

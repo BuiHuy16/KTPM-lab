@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  main:
+    web-application-type: reactive
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD}
+      timeout: 2s
+  cloud:
+    gateway:
+      server:
+        webflux:
+          httpclient:
+            connect-timeout: 2000
+            response-timeout: 5s
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+lab:
+  jwt:
+    secret: ${JWT_SECRET}
+    issuer: apigatewaylab
+  internal-token: ${INTERNAL_API_TOKEN}
+  services:
+    user-url: ${USER_SERVICE_URL:http://localhost:8081}
+    order-url: ${ORDER_SERVICE_URL:http://localhost:8082}

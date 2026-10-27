@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:lab;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password: ''
+lab:
+  jwt:
+    secret: test-only-jwt-signing-secret-at-least-32-bytes
+  internal-token: test-only-internal-secret-at-least-32-chars
+  minio:
+    access-key: test-only-minio-user
+    secret-key: test-only-minio-password
+logging:
+  level:
+    root: INFO

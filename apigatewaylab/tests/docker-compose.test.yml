@@ -1,0 +1,6 @@
+# Optional local verification override when another project owns localhost:5435.
+# Internal service URLs and the main docker-compose.yml remain unchanged.
+services:
+  postgres:
+    ports: !override
+      - "127.0.0.1:15435:5432"

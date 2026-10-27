@@ -1,0 +1,11 @@
+lab:
+  jwt:
+    secret: test-only-jwt-signing-secret-at-least-32-bytes
+  internal-token: test-only-internal-secret-at-least-32-chars
+spring:
+  data:
+    redis:
+      password: test-only-redis
+logging:
+  level:
+    root: INFO
